@@ -1,0 +1,140 @@
+/* ============================================================
+   DESIGN SYSTEM — Imagine AI
+   Inspired by ui-ux-pro-max-skill design principles:
+   - cursor-pointer on all clickable elements
+   - Hover states with smooth transitions (200-300ms)
+   - Focus states visible for keyboard nav
+   - prefers-reduced-motion respected
+   - Responsive: 375px, 768px, 1024px, 1440px
+   ============================================================ */
+
+:root {
+  /* --- Color Palette --- */
+  --c-bg-0: #09090b;
+  --c-bg-1: #0f0f14;
+  --c-bg-2: #16161d;
+  --c-bg-3: #1c1c27;
+
+  --c-surface: rgba(255, 255, 255, 0.03);
+  --c-surface-hover: rgba(255, 255, 255, 0.06);
+  --c-surface-active: rgba(255, 255, 255, 0.09);
+
+  --c-text-0: #f4f4f5;
+  --c-text-1: #a1a1aa;
+  --c-text-2: #71717a;
+  --c-text-3: #52525b;
+
+  --c-accent: #8b5cf6;
+  --c-accent-light: #a78bfa;
+  --c-accent-muted: rgba(139, 92, 246, 0.12);
+  --c-accent-glow: rgba(139, 92, 246, 0.2);
+
+  --c-secondary: #06b6d4;
+  --c-secondary-muted: rgba(6, 182, 212, 0.12);
+
+  --c-success: #22c55e;
+  --c-warning: #f59e0b;
+  --c-danger: #ef4444;
+
+  --c-border: rgba(255, 255, 255, 0.06);
+  --c-border-hover: rgba(255, 255, 255, 0.12);
+  --c-border-accent: rgba(139, 92, 246, 0.25);
+
+  /* --- Gradients --- */
+  --g-accent: linear-gradient(135deg, #8b5cf6, #06b6d4);
+  --g-accent-warm: linear-gradient(135deg, #8b5cf6, #ec4899);
+  --g-surface: linear-gradient(180deg, rgba(139, 92, 246, 0.06) 0%, transparent 100%);
+
+  /* --- Typography --- */
+  --f-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --f-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --f-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* --- Spacing --- */
+  --s-xs: 4px;
+  --s-sm: 8px;
+  --s-md: 16px;
+  --s-lg: 24px;
+  --s-xl: 32px;
+  --s-2xl: 48px;
+  --s-3xl: 64px;
+
+  /* --- Radius --- */
+  --r-xs: 6px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 20px;
+  --r-2xl: 24px;
+  --r-full: 9999px;
+
+  /* --- Shadows --- */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 32px var(--c-accent-glow);
+  --shadow-glow-lg: 0 0 60px var(--c-accent-glow);
+
+  /* --- Transitions --- */
+  --t-fast: 150ms ease;
+  --t-base: 200ms ease;
+  --t-slow: 300ms ease;
+}
+
+/* ===== Reset ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--f-body);
+  background: var(--c-bg-0);
+  color: var(--c-text-0);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  background: var(--c-accent);
+  color: white;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--c-text-3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--c-text-2); }
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
