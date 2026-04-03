@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 import './App.css';
 
 // ─── Configuration ─────────────────────────────────────────────
-const HF_ACCESS_TOKEN = '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';
+
 
 const HF_IMAGE_MODEL =
   '/api/huggingface/hf-inference/models/stabilityai/stable-diffusion-xl-base-1.0';
