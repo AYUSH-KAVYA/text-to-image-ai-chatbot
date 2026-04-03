@@ -1,16 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-import { loadEnv } from 'vite'
-
 // https://vite.dev/config/
-export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd(), '')
-  return {
-    plugins: [react()],
-    define: {
-      'import.meta.env.VITE_HF_ACCESS_TOKEN': JSON.stringify(env.HF_ACCESS_TOKEN || env.VITE_HF_ACCESS_TOKEN || '')
-    },
+export default defineConfig({
+  plugins: [react()],
   server: {
     proxy: {
       '/api/huggingface': {
@@ -20,5 +13,4 @@ export default defineConfig(({ mode }) => {
       },
     },
   },
-  }
 })
