@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/api/huggingface/:match*",
-      "destination": "https://router.huggingface.co/:match*"
-    }
-  ]
-}

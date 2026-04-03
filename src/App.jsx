@@ -5,12 +5,12 @@ import './App.css';
 
 
 const HF_IMAGE_MODEL =
-  '/api/huggingface/hf-inference/models/stabilityai/stable-diffusion-xl-base-1.0';
+  'https://router.huggingface.co/hf-inference/models/stabilityai/stable-diffusion-xl-base-1.0';
 
 const HF_ACCESS_TOKEN = import.meta.env.VITE_HF_ACCESS_TOKEN || '';
 
 const HF_TEXT_MODEL =
-  '/api/huggingface/v1/chat/completions';
+  'https://router.huggingface.co/v1/chat/completions';
 
 const MAX_CHARS = 1000;
 
